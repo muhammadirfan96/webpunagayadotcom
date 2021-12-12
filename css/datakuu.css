@@ -1,0 +1,32 @@
+.data {
+    background-color: #04dffc;
+    border-bottom-right-radius: 5px;
+}
+.logo {
+    background-color: #100b70;
+    border-top-left-radius: 5px;
+}
+.btn {
+	background-color: #fc8b05;
+    margin: 5px;
+}
+/*smartphone version88*/
+@media (max-width: 991.98px){
+    .logo {
+        border-bottom: 3px solid #fc8b05;
+        border-top-right-radius: 5px;
+    }
+    .data {
+        border-bottom-left-radius: 5px;
+    }
+}
+/*dekstop version*/
+@media (min-width: 992px) {
+    .logo {
+        border-right: 3px solid #fc8b05;
+        border-bottom-left-radius: 5px;
+    }
+    .data {
+        border-top-right-radius: 5px;
+    }
+}

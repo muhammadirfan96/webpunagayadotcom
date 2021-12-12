@@ -1,0 +1,56 @@
+
+.nv1 {
+	background-color: #100b70;
+	border-bottom: 3px solid #fc8b05;
+}
+
+.nv2 {
+	background-color: #04dffc;
+}
+.tulis {
+	color: red;
+	text-shadow: 0.5px;
+}
+
+ul li a {
+	margin-right: 15px;
+}
+
+* {
+	font-family: Copperplate ;
+}
+
+.jumbotron .col-md-6 {
+	font-style: italic;
+	font-size: 18px;
+}
+
+.jumbotron .col-md-6 .nama {
+	text-transform: capitalize;
+}
+
+
+footer .col p {
+	background-color:  #100b70;
+	padding: 10px;
+	font-size: 10px;
+}
+
+/*dekstop version*/
+@media (min-width: 992px) {
+	footer .col p {
+	padding: 20px;
+	font-size: 15px;
+	margin-top: 80px;
+	}
+
+	.jumbotron .col-md-6 {
+	font-size: 24px;
+
+	}
+
+	.jumbotron .my-3 .container .row .col-md-6 .nama {
+	text-transform: uppercase;
+	}
+
+}

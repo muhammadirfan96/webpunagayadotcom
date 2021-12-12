@@ -1,0 +1,16 @@
+.jumbotron .container-fluid-md h2 {
+	background-color:  #100b70;
+	border-bottom: 3px solid #fc8b05;
+	margin-bottom: 20px;
+}
+
+iframe {
+	width: 90%;
+	height: 600px;
+}
+
+@media (min-width: 992px){
+	iframe {
+		width: 75%;
+	}
+}

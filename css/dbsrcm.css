@@ -1,0 +1,12 @@
+.jumbotron .container-fluid-md h2 {
+	background-color:  #100b70;
+	border-bottom: 3px solid #fc8b05;
+	margin-bottom: 20px;
+}
+#container table {
+	font-size: 12px;
+}
+
+.tabel {
+	display: none;
+}

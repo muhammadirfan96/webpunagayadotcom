@@ -1,0 +1,27 @@
+.container .atas .col-md-6 {
+	border-bottom: 3px solid #fc8b05;
+	background-color: #100b70;
+	width: 90% !important;
+}
+
+.container .bawah .col-md-6{
+	background-color: #04dffc;
+	width: 90% !important;
+
+}
+
+.btn {
+	background-color: #fc8b05;
+}
+
+/*dekstop version*/
+@media (min-width: 992px) {
+	.container .atas .col-md-6 {
+	width: 40% !important;
+
+}
+
+.container .bawah .col-md-6{
+	width: 40% !important;
+}
+}
