@@ -1,10 +1,10 @@
-<?php 
+<?php
 session_start();
 if (!isset($_SESSION["login"])) {
 	header("Location: login.php");
 	exit;
 }
-if(!isset($_SESSION["loginAdmin"])) {
+if (!isset($_SESSION["loginAdmin"])) {
 	header("Location: loginAdmin.php");
 	exit;
 }
@@ -20,17 +20,19 @@ $srcm = query("SELECT * FROM srcm");
 
 <!doctype html>
 <html lang="en">
+
 <head>
-	 <meta charset="utf-8">
-     <meta name="viewport" content="width=device-width, initial-scale=1">
-     <link rel="icon" href="../img/tittle.png">
-     <title>Database SR</title>
-     <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-     <link rel="stylesheet" href="../bootstrap/icons/icons-1.4.0/font/bootstrap-icons.css">
-     <script src="../bootstrap/js/jquery-3.2.1.js"></script>
-     <script src="../bootstrap/js/bootstrap.min.js"></script>   
-     <link rel="stylesheet" href="../css/dbsrcm.css">
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../img/tittle.png">
+	<title>Database SR</title>
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../bootstrap/icons/icons-1.4.0/font/bootstrap-icons.css">
+	<script src="../bootstrap/js/jquery-3.2.1.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/dbsrcm.css">
 </head>
+
 <body>
 	<div class="jumbotron">
 		<div class="container-fluid-md">
@@ -42,7 +44,7 @@ $srcm = query("SELECT * FROM srcm");
 			<div class="row mb-3">
 				<div class="col">
 					<p class="py-2" style="background-color: #04dffc; text-indent: 5%;"><a class="text-decoration-none text-dark" href="admin.php"><i class="bi-house-fill fs-4 "> </i>Admin</a></p>
-				</div>	
+				</div>
 			</div>
 		</div>
 
@@ -50,16 +52,16 @@ $srcm = query("SELECT * FROM srcm");
 			<div class="row">
 				<div class="col">
 					<form action="" method="post">
-						<input type="text" name="keyword" size="40" autofocus="" placeholder="masukkan keyword pencarian..." autocomplete="off" id="keyword" >
+						<input type="text" name="keyword" size="40" autofocus="" placeholder="masukkan keyword pencarian..." autocomplete="off" id="keyword">
 						<!-- <button type="submit" name="cari" id="tombol-cari">cari</button> -->
 					</form>
 					<i style="font-size: 12px; color: red;">* Pencarian berdasarkan kolom diinput oleh, tanggal, nomor SR atau area</i>
 					<br><br>
 					<div class="d-grid gap-2 d-md-block">
-					  <button class="btn btn-primary show" type="button">tampilkan</button>
-					  <button class="btn btn-success hide" type="button">sembunyikan</button>
+						<button class="btn btn-primary show" type="button">tampilkan</button>
+						<button class="btn btn-success hide" type="button">sembunyikan</button>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 
@@ -96,59 +98,53 @@ $srcm = query("SELECT * FROM srcm");
 										<th scope="col">tindakan sementara 1</th>
 										<th scope="col">tindakan sementara 2</th>
 										<th scope="col">tindakan sementara 3</th>
-										<th scope="col">evidence1</th>
-										<th scope="col">evidence2</th>
 									</tr>
-								</thead>	
+								</thead>
 
-								<?php $i = 1; ?>	
+								<?php $i = 1; ?>
 								<?php foreach ($srcm as $row) : ?>
-								<tr>
-									<th scope="row"><?= $i; ?></th>
-									<td>
-										<a href="../cetakSrCm.php?id=<?= $row["id"];?>&cetak=dbsrcm">cetak</a><br><hr style="color: black; margin: 3px;">
-										<a href="hapus.php?id=<?= $row["id"];?>" onclick="return confirm('yakin?')">hapus</a>
-									</td>
-									<td><?= $row["ket"]; ?></td>
-									<td><?= $row["diinput_oleh"]; ?></td>
-									<td><?= $row["nomorSr"] ?></td>
-									<td><?= $row["tanggal"] ?></td>
-									<td><?= $row["unit"]; ?></td>
-									<td><?= $row["area"]; ?></td>
-									<td><?= $row["namaPeralatan"]; ?></td>
-									<td><?= $row["kks"]; ?></td>
-									<td><?= $row["uraianGangguan1"]; ?></td>
-									<td><?= $row["uraianGangguan2"]; ?></td>
-									<td><?= $row["normalOperasi1"]; ?></td>
-									<td><?= $row["normalOperasi2"]; ?></td>
-									<td><?= $row["gejala1"]; ?></td>
-									<td><?= $row["gejala2"]; ?></td>
-									<td><?= $row["prioritas"]; ?></td>
-									<td><?= $row["akibatKerusakan1"]; ?></td>
-									<td><?= $row["akibatKerusakan2"]; ?></td>
-									<td><?= $row["kemungkinanDampak1"]; ?></td>
-									<td><?= $row["kemungkinanDampak2"]; ?></td>
-									<td><?= $row["tindakanSementara1"]; ?></td>
-									<td><?= $row["tindakanSementara2"]; ?></td>
-									<td><?= $row["tindakanSementara3"]; ?></td>			
-									<td>
-										<img src="../imgUpload/<?= $row["evidence1"]; ?>" width="100px;" height="60px;">
-									</td>
-									<td>
-										<img src="../imgUpload/<?= $row["evidence2"]; ?>" width="100px;" height="60px;">
-									</td>
-								</tr>
-								<?php $i++; ?>
+									<tr>
+										<th scope="row"><?= $i; ?></th>
+										<td>
+											<a href="../cetakSrCm.php?id=<?= $row["id"]; ?>&cetak=dbsrcm">cetak</a><br>
+											<hr style="color: black; margin: 3px;">
+											<a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?')">hapus</a>
+										</td>
+										<td><?= $row["ket"]; ?></td>
+										<td><?= $row["diinput_oleh"]; ?></td>
+										<td><?= $row["nomorSr"] ?></td>
+										<td><?= $row["tanggal"] ?></td>
+										<td><?= $row["unit"]; ?></td>
+										<td><?= $row["area"]; ?></td>
+										<td><?= $row["namaPeralatan"]; ?></td>
+										<td><?= $row["kks"]; ?></td>
+										<td><?= $row["uraianGangguan1"]; ?></td>
+										<td><?= $row["uraianGangguan2"]; ?></td>
+										<td><?= $row["normalOperasi1"]; ?></td>
+										<td><?= $row["normalOperasi2"]; ?></td>
+										<td><?= $row["gejala1"]; ?></td>
+										<td><?= $row["gejala2"]; ?></td>
+										<td><?= $row["prioritas"]; ?></td>
+										<td><?= $row["akibatKerusakan1"]; ?></td>
+										<td><?= $row["akibatKerusakan2"]; ?></td>
+										<td><?= $row["kemungkinanDampak1"]; ?></td>
+										<td><?= $row["kemungkinanDampak2"]; ?></td>
+										<td><?= $row["tindakanSementara1"]; ?></td>
+										<td><?= $row["tindakanSementara2"]; ?></td>
+										<td><?= $row["tindakanSementara3"]; ?></td>
+									</tr>
+									<?php $i++; ?>
 								<?php endforeach; ?>
 							</table>
 						</div>
 					</div>
 
-				</div>	
+				</div>
 			</div>
 		</div>
-	</div>	
+	</div>
 	<script src="../js/tampilkan.js"></script>
 	<script src="../js/ajaxsrcm.js"></script>
 </body>
+
 </html>

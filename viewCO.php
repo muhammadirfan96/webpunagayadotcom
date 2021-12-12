@@ -181,6 +181,8 @@ if ($hariIniUnit1["coolingfan1a"] !== $kemarinUnit1["coolingfan1a"] || $hariIniU
 // ball cleaning
 if (!empty($hariIniUnit1["ballcleaning1"])) {
     $ballcleaning1 = "PENGOPERASIAN BALL CLEANING #1";
+} else {
+    $ballcleaning1 = "";
 }
 
 // UNIT DUA
@@ -361,6 +363,8 @@ if ($hariIniUnit2["coolingfan2a"] !== $kemarinUnit2["coolingfan2a"] || $hariIniU
 // ball cleaning
 if (!empty($hariIniUnit2["ballcleaning2"])) {
     $ballcleaning2 = "PENGOPERASIAN BALL CLEANING #2";
+} else {
+    $ballcleaning2 = "";
 }
 
 //COMMON
@@ -466,9 +470,13 @@ if ($hariIniCommon["ACcentralccra"] !== $kemarinCommon["ACcentralccra"] || $hari
 // warming up edg
 if (!empty($hariIniCommon["warmingupedg"])) {
     $warmingUpEdg = "WARMING UP EDG";
+} else {
+    $warmingUpEdg = "";
 }
 
 // warming up aux boiler
 if (!empty($hariIniCommon["warmingupauxboiler"])) {
     $warmingUpAuxBoiler = "WARMING UP AUX BOILER";
+} else {
+    $warmingUpAuxBoiler = "";
 }
