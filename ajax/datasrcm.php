@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 require '../functions.php';
 
@@ -43,50 +43,43 @@ $srcm = query($query);
 				<th scope="col">kemungkinan dampak2</th>
 				<th scope="col">tindakan sementara 1</th>
 				<th scope="col">tindakan sementara 2</th>
-				<th scope="col">tindakan sementara 3</th>			
-				<th scope="col">evidence1</th>
-				<th scope="col">evidence2</th>
+				<th scope="col">tindakan sementara 3</th>
 			</tr>
-		</thead>	
+		</thead>
 
-		<?php $i = 1; ?>	
+		<?php $i = 1; ?>
 		<?php foreach ($srcm as $row) : ?>
-		<tr>
-			<th scope="row"><?= $i; ?></th>
-			<td>
-				<a href="../cetakSrCm.php?id=<?= $row["id"];?>&cetak=dbsrcm">cetak</a><br><hr style="color: black; margin: 3px;">
-				<a href="hapus.php?id=<?= $row["id"];?>" onclick="return confirm('yakin?')">hapus</a>
-			</td>
-			<td><?= $row["ket"]; ?></td>
-			<td><?= $row["diinput_oleh"]; ?></td>
-			<td><?= $row["nomorSr"] ?></td>
-			<td><?= $row["tanggal"] ?></td>
-			<td><?= $row["unit"]; ?></td>
-			<td><?= $row["area"]; ?></td>
-			<td><?= $row["namaPeralatan"]; ?></td>
-			<td><?= $row["kks"]; ?></td>
-			<td><?= $row["uraianGangguan1"]; ?></td>
-			<td><?= $row["uraianGangguan2"]; ?></td>
-			<td><?= $row["normalOperasi1"]; ?></td>
-			<td><?= $row["normalOperasi2"]; ?></td>
-			<td><?= $row["gejala1"]; ?></td>
-			<td><?= $row["gejala2"]; ?></td>
-			<td><?= $row["prioritas"]; ?></td>
-			<td><?= $row["akibatKerusakan1"]; ?></td>
-			<td><?= $row["akibatKerusakan2"]; ?></td>
-			<td><?= $row["kemungkinanDampak1"]; ?></td>
-			<td><?= $row["kemungkinanDampak2"]; ?></td>
-			<td><?= $row["tindakanSementara1"]; ?></td>
-			<td><?= $row["tindakanSementara2"]; ?></td>
-			<td><?= $row["tindakanSementara3"]; ?></td>			
-			<td>
-				<img src="../imgUpload/<?= $row["evidence1"]; ?>" width="100px;" height="60px;">
-			</td>
-			<td>
-				<img src="../imgUpload/<?= $row["evidence2"]; ?>" width="100px;" height="60px;">
-			</td>
-		</tr>
-		<?php $i++; ?>
+			<tr>
+				<th scope="row"><?= $i; ?></th>
+				<td>
+					<a href="../cetakSrCm.php?id=<?= $row["id"]; ?>&cetak=dbsrcm">cetak</a><br>
+					<hr style="color: black; margin: 3px;">
+					<a href="hapus.php?id=<?= $row["id"]; ?>" onclick="return confirm('yakin?')">hapus</a>
+				</td>
+				<td><?= $row["ket"]; ?></td>
+				<td><?= $row["diinput_oleh"]; ?></td>
+				<td><?= $row["nomorSr"] ?></td>
+				<td><?= $row["tanggal"] ?></td>
+				<td><?= $row["unit"]; ?></td>
+				<td><?= $row["area"]; ?></td>
+				<td><?= $row["namaPeralatan"]; ?></td>
+				<td><?= $row["kks"]; ?></td>
+				<td><?= $row["uraianGangguan1"]; ?></td>
+				<td><?= $row["uraianGangguan2"]; ?></td>
+				<td><?= $row["normalOperasi1"]; ?></td>
+				<td><?= $row["normalOperasi2"]; ?></td>
+				<td><?= $row["gejala1"]; ?></td>
+				<td><?= $row["gejala2"]; ?></td>
+				<td><?= $row["prioritas"]; ?></td>
+				<td><?= $row["akibatKerusakan1"]; ?></td>
+				<td><?= $row["akibatKerusakan2"]; ?></td>
+				<td><?= $row["kemungkinanDampak1"]; ?></td>
+				<td><?= $row["kemungkinanDampak2"]; ?></td>
+				<td><?= $row["tindakanSementara1"]; ?></td>
+				<td><?= $row["tindakanSementara2"]; ?></td>
+				<td><?= $row["tindakanSementara3"]; ?></td>
+			</tr>
+			<?php $i++; ?>
 		<?php endforeach; ?>
 	</table>
 </div>

@@ -1,4 +1,4 @@
-<?php 
+<?php
 require '../functions.php';
 
 $keyword = $_GET["keyword"];
@@ -27,7 +27,7 @@ $nilaiLimaS = query($query2);
 
 <h4 class="text-center">Database 5S</h4>
 
-<div class="table-responsive mb-3">	
+<div class="table-responsive mb-3">
 	<table class="table table-hover">
 		<thead class="table-success text-center align-middle">
 			<tr>
@@ -38,34 +38,26 @@ $nilaiLimaS = query($query2);
 				<th scope="col">Diinput Oleh</th>
 				<th scope="col">Area</th>
 				<th scope="col">Saran / Kendala</th>
-				<th scope="col">Sebelum</th>
-				<th scope="col">Setelah</th>
 			</tr>
 		</thead>
 		<?php $i = 1; ?>
 		<?php foreach ($limaS as $row) : ?>
 
-		<!-- <tbody> -->
+			<!-- <tbody> -->
 			<tr>
 				<th scope="row"><?= $i; ?></th>
 				<td>
 					<a href="../cetakLimaS.php?id=<?= $row["id"]; ?>&from=db5s">Cetak</a>
-					<a href="hapus.php?id=<?= $row["id"];?>&tb=multi" onclick="return confirm('yakin?')">hapus</a>
+					<a href="hapus.php?id=<?= $row["id"]; ?>&tb=multi" onclick="return confirm('yakin?')">hapus</a>
 				</td>
-				<td><?=$row["namaPeralatan"]; ?></td>
-				<td><?=$row["tanggal"]; ?></td>
-				<td><?=$row["diinput_oleh"]; ?></td>
-				<td><?=$row["area"]; ?></td>
-				<td><?=$row["saran"]; ?></td>
-				<td>
-					<img src="../imgUpload/<?= $row["fotoSebelum"]; ?>" width="100px;" height="60px;">
-				</td>
-				<td>
-					<img src="../imgUpload/<?= $row["fotoSetelah"]; ?>" width="100px;" height="60px;">
-				</td>
+				<td><?= $row["namaPeralatan"]; ?></td>
+				<td><?= $row["tanggal"]; ?></td>
+				<td><?= $row["diinput_oleh"]; ?></td>
+				<td><?= $row["area"]; ?></td>
+				<td><?= $row["saran"]; ?></td>
 			</tr>
-		<!-- </tbody> -->
-		<?php $i++; ?>
+			<!-- </tbody> -->
+			<?php $i++; ?>
 		<?php endforeach; ?>
 	</table>
 </div>
@@ -78,22 +70,22 @@ $nilaiLimaS = query($query2);
 		<thead class="table-danger text-center align-middle">
 			<tr>
 				<th scope="col">No</th>
-				<?php for ($i=1; $i <= 25; $i++) : ?>
+				<?php for ($i = 1; $i <= 25; $i++) : ?>
 					<th scope="col">Nilai <?= $i ?></th>
 				<?php endfor; ?>
 			</tr>
-		</thead>	
+		</thead>
 		<!-- <tbody> -->
-			<?php $i = 1; ?>
-			<?php foreach ($nilaiLimaS as $row) : ?>
+		<?php $i = 1; ?>
+		<?php foreach ($nilaiLimaS as $row) : ?>
 			<tr>
 				<th scope="row"><?= $i; ?></th>
-				<?php for ($j=1; $j <= 25; $j++) : ?>
+				<?php for ($j = 1; $j <= 25; $j++) : ?>
 					<td><?= $row["nilai$j"] ?></td>
 				<?php endfor; ?>
 			</tr>
-		<!-- </tbody> -->	
-		<?php $i++; ?>
+			<!-- </tbody> -->
+			<?php $i++; ?>
 		<?php endforeach; ?>
 	</table>
 </div>

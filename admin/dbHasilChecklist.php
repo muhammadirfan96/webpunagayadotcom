@@ -4,7 +4,7 @@ if (!isset($_SESSION["login"])) {
 	header("Location: login.php");
 	exit;
 }
-if(!isset($_SESSION["loginAdmin"])) {
+if (!isset($_SESSION["loginAdmin"])) {
 	header("Location: loginAdmin.php");
 	exit;
 }
@@ -24,17 +24,19 @@ $komen = query("SELECT * FROM komen");
 
 <!doctype html>
 <html lang="en">
+
 <head>
 	<meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="../img/tittle.png">
-    <title>database hasil checklist</title>
-    <link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../bootstrap/icons/icons-1.4.0/font/bootstrap-icons.css">
-    <script src="../bootstrap/js/jquery-3.2.1.js"></script>
-    <script src="../bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="../css/dbsrcm.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="../img/tittle.png">
+	<title>database hasil checklist</title>
+	<link href="../bootstrap/css/bootstrap.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="../bootstrap/icons/icons-1.4.0/font/bootstrap-icons.css">
+	<script src="../bootstrap/js/jquery-3.2.1.js"></script>
+	<script src="../bootstrap/js/bootstrap.min.js"></script>
+	<link rel="stylesheet" href="../css/dbsrcm.css">
 </head>
+
 <body>
 	<div class="jumbotron">
 		<div class="container-fluid-md">
@@ -46,7 +48,7 @@ $komen = query("SELECT * FROM komen");
 			<div class="row mb-3">
 				<div class="col">
 					<p class="py-2" style="background-color: #04dffc; text-indent: 5%;"><a class="text-decoration-none text-dark" href="admin.php"><i class="bi-house-fill fs-4 "> </i>Admin</a></p>
-				</div>	
+				</div>
 			</div>
 		</div>
 
@@ -54,15 +56,15 @@ $komen = query("SELECT * FROM komen");
 			<div class="row">
 				<div class="col">
 					<form action="" method="post">
-						<input type="text" name="keyword" size="40" autofocus="" placeholder="masukkan keyword pencarian..." autocomplete="off" id="keyword" >
+						<input type="text" name="keyword" size="40" autofocus="" placeholder="masukkan keyword pencarian..." autocomplete="off" id="keyword">
 					</form>
 					<i style="font-size: 12px; color: red;">* Pencarian berdasarkan kolom diinput oleh, tanggal atau nama peralatan</i>
 					<br><br>
 					<div class="d-grid gap-2 d-md-block">
-					  <button class="btn btn-primary show" type="button">tampilkan</button>
-					  <button class="btn btn-success hide" type="button">sembunyikan</button>
+						<button class="btn btn-primary show" type="button">tampilkan</button>
+						<button class="btn btn-success hide" type="button">sembunyikan</button>
 					</div>
-				</div>	
+				</div>
 			</div>
 		</div>
 
@@ -71,10 +73,10 @@ $komen = query("SELECT * FROM komen");
 				<div class="col">
 
 					<div id="container" class="tabel">
-						
+
 						<h4 class="text-center">Database Checklist</h4>
 
-						<div class="table-responsive mb-3">	
+						<div class="table-responsive mb-3">
 							<table class="table table-hover">
 								<thead class="table-success text-center align-middle">
 									<tr>
@@ -89,20 +91,20 @@ $komen = query("SELECT * FROM komen");
 								<?php $i = 1; ?>
 								<?php foreach ($checklist as $row) : ?>
 
-								<!-- <tbody> -->
+									<!-- <tbody> -->
 									<tr>
 										<th scope="row"><?= $i; ?></th>
 										<td>
 											<a href="../cetakHasilChecklist.php?id=<?= $row["id"]; ?>&from=db">Cetak</a>
-											<a href="hapus.php?id=<?= $row["id"];?>&tb=multi" onclick="return confirm('yakin?')">hapus</a>
+											<a href="hapus.php?id=<?= $row["id"]; ?>&tb=multi" onclick="return confirm('yakin?')">hapus</a>
 										</td>
-										<td><?=$row["namaPeralatan"]; ?></td>
-										<td><?=$row["tanggal"]; ?></td>
-										<td><?=$row["diinput_oleh"]; ?></td>
-										<td><?=$row["catatan"]; ?></td>
+										<td><?= $row["namaPeralatan"]; ?></td>
+										<td><?= $row["tanggal"]; ?></td>
+										<td><?= $row["diinput_oleh"]; ?></td>
+										<td><?= $row["catatan"]; ?></td>
 									</tr>
-								<!-- </tbody> -->
-								<?php $i++; ?>
+									<!-- </tbody> -->
+									<?php $i++; ?>
 								<?php endforeach; ?>
 							</table>
 						</div>
@@ -116,23 +118,23 @@ $komen = query("SELECT * FROM komen");
 									<tr>
 										<th scope="col">No</th>
 										<th scope="col">Nama Peralatan</th>
-										<?php for ($i=1; $i <= 29; $i++) : ?>
+										<?php for ($i = 1; $i <= 29; $i++) : ?>
 											<th scope="col">Jawaban <?= $i ?></th>
 										<?php endfor; ?>
 									</tr>
-								</thead>	
+								</thead>
 								<!-- <tbody> -->
-									<?php $i = 1; ?>
-									<?php foreach ($jawaban as $row) : ?>
+								<?php $i = 1; ?>
+								<?php foreach ($jawaban as $row) : ?>
 									<tr>
 										<th scope="row"><?= $i; ?></th>
 										<td><?= $row["namaPeralatan"] ?></td>
-										<?php for ($j=1; $j <= 29; $j++) : ?>
+										<?php for ($j = 1; $j <= 29; $j++) : ?>
 											<td><?= $row["jawaban$j"] ?></td>
 										<?php endfor; ?>
 									</tr>
-								<!-- </tbody> -->	
-								<?php $i++; ?>
+									<!-- </tbody> -->
+									<?php $i++; ?>
 								<?php endforeach; ?>
 							</table>
 						</div>
@@ -144,33 +146,34 @@ $komen = query("SELECT * FROM komen");
 									<tr>
 										<th scope="col">No</th>
 										<th scope="col">Nama Peralatan</th>
-										<?php for ($i=1; $i <= 29; $i++) : ?>
+										<?php for ($i = 1; $i <= 29; $i++) : ?>
 											<th scope="col">Komen <?= $i ?></th>
 										<?php endfor; ?>
 									</tr>
 								</thead>
 								<!-- <tbody> -->
-									<?php $i = 1; ?>
-									<?php foreach ($komen as $row) : ?>
+								<?php $i = 1; ?>
+								<?php foreach ($komen as $row) : ?>
 									<tr>
 										<th scope="row"><?= $i; ?></th>
 										<td><?= $row["namaPeralatan"] ?></td>
-										<?php for ($j=1; $j <= 29; $j++) : ?>
+										<?php for ($j = 1; $j <= 29; $j++) : ?>
 											<td><?= $row["komen$j"] ?></td>
 										<?php endfor; ?>
 									</tr>
-								<!-- </tbody> -->	
-								<?php $i++; ?>
+									<!-- </tbody> -->
+									<?php $i++; ?>
 								<?php endforeach; ?>
 							</table>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>	
+		</div>
 	</div>
 	<script src="../js/tampilkan.js"></script>
 	<script src="../js/ajaxchecklist.js"></script>
 
 </body>
+
 </html>
